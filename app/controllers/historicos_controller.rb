@@ -1,4 +1,6 @@
 class HistoricosController < ApplicationController
-	@historicos = Historico.all
-	render json: @historicos
+	def index 
+		@historicos = Historico.all
+		render json: @historicos
+	end
 end

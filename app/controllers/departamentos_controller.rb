@@ -1,4 +1,6 @@
 class DepartamentosController < ApplicationController
-	@departamentos = Departamento.all
-	render json: @departamentos
+	def index
+		@departamentos = Departamento.all
+		render json: @departamentos
+	end
 end

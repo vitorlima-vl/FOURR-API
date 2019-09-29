@@ -1,4 +1,6 @@
 class ProdutosController < ApplicationController
-		@produtos = Produto.all
-		render json: @produtos
+		def index
+			@produtos = Produto.all
+			render json: @produtos
+		end
 end
