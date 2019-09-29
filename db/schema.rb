@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_29_220756) do
+ActiveRecord::Schema.define(version: 2019_09_29_223715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,30 @@ ActiveRecord::Schema.define(version: 2019_09_29_220756) do
   create_table "departamentos", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "historicos", force: :cascade do |t|
+    t.integer "produto_id"
+    t.string "depto_solicitante"
+    t.datetime "data_reposta"
+    t.datetime "data_solicitacao"
+    t.integer "resultado"
+  end
+
+  create_table "produtos", force: :cascade do |t|
+    t.string "descricao"
+    t.string "categoria"
+    t.string "imagem"
+    t.string "nome_prod"
+    t.string "dono_produto"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "solicitacaos", force: :cascade do |t|
+    t.integer "produto_id"
+    t.string "depto_solicitante"
+    t.datetime "data_solicitacao"
   end
 
 end

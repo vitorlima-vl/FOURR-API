@@ -1,0 +1,2 @@
+class Solicitacao < ApplicationRecord
+end
