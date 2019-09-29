@@ -18,7 +18,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   username: sbawwmhntylpgy
-  password: <%= ENV.fetch("DB_PASSWORD") %>
+  password: e2160eda8886bba60ebde71632f1ed1dd37b82e7d9c325385c9327a0cf535de5
   host: ec2-174-129-18-42.compute-1.amazonaws.com
   database: dcdsem0fifs5hu
   # For details on connection pooling, see Rails configuration guide
@@ -38,6 +38,6 @@ production:
   <<: *default
   database: dcdsem0fifs5hu
   username: sbawwmhntylpgy
-  password: <%= ENV.fetch("DB_PASSWORD") %>
+  password: e2160eda8886bba60ebde71632f1ed1dd37b82e7d9c325385c9327a0cf535de5
   host: ec2-174-129-18-42.compute-1.amazonaws.com
   #password: <%= ENV['FOURR_API_DATABASE_PASSWORD'] %>

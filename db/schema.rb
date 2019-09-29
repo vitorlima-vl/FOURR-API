@@ -16,6 +16,9 @@ ActiveRecord::Schema.define(version: 2019_09_29_223715) do
   enable_extension "plpgsql"
 
   create_table "departamentos", force: :cascade do |t|
+    t.string "email"
+    t.string "senha"
+    t.string "nome_depto"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
