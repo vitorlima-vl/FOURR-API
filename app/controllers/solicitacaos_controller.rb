@@ -1,5 +1,5 @@
 class SolicitacaosController < ApplicationController
-	def index
-    render json: Solicitacaos.all
+		@solicitacaos = Solicitacao.all
+		render json: @solicitacaos
   end
 end
