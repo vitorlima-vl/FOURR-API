@@ -2,16 +2,16 @@ class SessionsController < ApplicationController
 	include CurrentUserConcern
 
 	def create
-		user = User
-					.find_by(email: params["user"]["email"])
-					.try(:authenticate, params["user"]["password"])
+		departamento = Departamento
+					.find_by(email: params["departamento"]["email"])
+					.try(:authenticate, params["departamento"]["password"])
 
-		if user
+		if departamento
 			#session[:user_id] = user_id
 			render json: {
 				status: :created,
 				logged_in: true,
-				user: user
+				departamento: session
 			}
 		else
 			render json: { status: 401 }
@@ -35,4 +35,4 @@ class SessionsController < ApplicationController
 	end
 end
 
-#curl --header "Content-Type: application/json" --request POST --data '{"user": {"email": "teste@gmail.com","password": "123456"}}' http://localhost:3000/sessions
+#curl --header "Content-Type: application/json" --request POST --data '{"departamento": {"email": "teste@gmail.com","password": "123456"}}' http://localhost:3000/sessions
