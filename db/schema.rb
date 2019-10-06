@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_29_223715) do
+ActiveRecord::Schema.define(version: 2019_10_06_173518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "departamentos", force: :cascade do |t|
+    t.string "nome"
     t.string "email"
-    t.string "senha"
-    t.string "nome_depto"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
