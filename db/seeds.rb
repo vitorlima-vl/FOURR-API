@@ -5,8 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Departamento.create(senha:'1234', email:'dmat@gmail.com', nome_depto:'DMAT')
-Departamento.create(senha:'1234', email:'de@gmail.com', nome_depto:'DE')
+
+Departamento.create(nome: "DMAT", email: "dmat@gmail.com", password: "12345678", password_confirmation: "12345678")
+Departamento.create(nome: "DE", email: "de@gmail.com", password: "12345678", password_confirmation: "12345678")
 
 Produto.create(descricao:'pc quebrado1',categoria:'eletronico',imagem:'www.google.com',nome_prod:'Macbook Pro',dono_produto:'de@gmail.com')
 Produto.create(descricao:'pc quebrado2',categoria:'eletronico',imagem:'www.google.com',nome_prod:'Macbook Pro',dono_produto:'de@gmail.com')
