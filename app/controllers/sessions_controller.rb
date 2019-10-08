@@ -7,11 +7,11 @@ class SessionsController < ApplicationController
 					.try(:authenticate, params["departamento"]["password"])
 
 		if departamento
-			#session[:user_id] = user_id
+			session[:user_id] = departamento.id
 			render json: {
 				status: :created,
 				logged_in: true,
-				departamento: session
+				departamento: departamento
 			}
 		else
 			render json: { status: 401 }
@@ -21,11 +21,11 @@ class SessionsController < ApplicationController
 		if @current_user
 			render json: {
 				logged_in: true,
-				user: @current_user
+				departamento: @current_user
 			}
 		else
 			render json:{
-				logged_in: fase
+				logged_in: false
 			}
 		end
 	end
