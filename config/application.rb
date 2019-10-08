@@ -24,7 +24,7 @@ module FourrApi
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.api_only = true
-	config.middleware.insert_after ActionDispatch::ParamsParser, ActionDispatch::Cookies
-	config.middleware.insert_after ActionDispatch::ParamsParser, ActionDispatch::Session::CookieStore
+	config.middleware.use ActionDispatch::Cookies
+	config.middleware.use ActionDispatch::Session::CookieStore, key: 'fourr'
   end
 end
