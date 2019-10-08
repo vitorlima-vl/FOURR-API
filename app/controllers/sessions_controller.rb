@@ -21,11 +21,11 @@ class SessionsController < ApplicationController
 		if @current_user
 			render json: {
 				logged_in: true,
-				user: @current_user
+				departamento: @current_user
 			}
 		else
 			render json:{
-				logged_in: fase
+				logged_in: false
 			}
 		end
 	end
