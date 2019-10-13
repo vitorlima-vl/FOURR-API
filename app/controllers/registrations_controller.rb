@@ -8,6 +8,7 @@ class RegistrationsController < ApplicationController
 
 		if departamento
 			session[:user_id] = departamento.id
+			UserMailer.bemvindo_email(@departamento).deliver_now
 			render json: {
 				status: :created,
 				user: departamento
