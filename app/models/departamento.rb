@@ -15,7 +15,8 @@ class Departamento < ApplicationRecord
 
 	def resetar_password!(senha)
 	 self.resetar_senha_token = nil
-	 self.password_digest = senha
+	 self.resetar_senha_timestamp = nil
+	 self.password = senha
 	 save!
 	end
 
