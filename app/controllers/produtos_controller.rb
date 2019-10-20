@@ -18,6 +18,7 @@ class ProdutosController < ApplicationController
       render json: {error: ["Dono não encontrado. Tente novamente"]}
     end
   end
+  
   def novo_produto_img
       produto = Produto.find(params['imagem']['produto'])
       produto.image.attatch(params['imagem']['formData'])
