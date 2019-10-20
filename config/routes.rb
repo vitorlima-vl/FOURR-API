@@ -7,15 +7,13 @@ Rails.application.routes.draw do
   get :logged_in, to: "sessions#logged_in"
   post :forgot, to: "senhas#forgot"
   post :reset, to: "senhas#reset"
+  post :new_img, to: "produtos#nova_img"
   post :new_product, to: "produtos#novo_produto"
+
 
   resources :users, :solicitacaos, :historicos, :produtos, :departamentos
 
   get '/', to: 'welcome#index'
-  post 'register', to: 'application#nome_do_metodo'
-  get    'sign_in'   => 'login#new'
-  post   'sign_in'   => 'login#create'
-  delete 'sign_out'  => 'login#destroy'
   end
   
 
