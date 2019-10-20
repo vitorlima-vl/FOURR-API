@@ -13,7 +13,7 @@ class ProdutosController < ApplicationController
 			dono_produto: params['produto']['dono_produto'],
 			categoria: params['produto']['categoria'],
 			nome_prod: params['produto']['nome_prod'])
-      render json: {status: true,produto}
+      render json: {status: true, produto: produto}
       produto.image.attatch(params['produto']['imagem'])
     else
       render json: {error: ["Dono não encontrado. Tente novamente"]}
