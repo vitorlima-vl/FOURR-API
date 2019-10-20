@@ -14,7 +14,6 @@ class ProdutosController < ApplicationController
 			categoria: params['produto']['categoria'],
 			nome_prod: params['produto']['nome_prod'])
       render json: {status: true, produto: produto}
-    end
     else
       render json: {error: ["Dono não encontrado. Tente novamente"]}
     end
