@@ -1,4 +1,4 @@
-test:
+ test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
 
@@ -10,10 +10,10 @@ google:
   service: GCS
   project: fourr
   credentials: <%= Rails.application.credentials.gcs_fourr_app.to_json %>
-  bucket: fourr-app
+  bucket: fourr-bucket
 
 google_dev:
   service: GCS
   project: fourr
   credentials: <%= Rails.root.join("config/secrets/fourr-app.json") %>
-  bucket: fourr-app
+  bucket: fourr-bucket
