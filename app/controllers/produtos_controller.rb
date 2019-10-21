@@ -20,7 +20,7 @@ class ProdutosController < ApplicationController
   end
 
   def nova_img
-    produto = Produto.find(Produto.maximum[:id])
+    produto = Produto.last
     print(params)
     print(params.imagem)
     print(params['imagem'])
