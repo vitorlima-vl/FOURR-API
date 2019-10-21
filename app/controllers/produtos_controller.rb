@@ -24,9 +24,6 @@ class ProdutosController < ApplicationController
     produto.image.attach(params[:image])
     render json: {status: true, produto: produto}
   end
-#['imagem']
-#.imagem
-#params
 
   private
     def produto_params

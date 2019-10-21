@@ -222,7 +222,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   cors (~> 1.0, >= 1.0.1)
-  google-cloud-storage (~> 1.8)
+  google-cloud-storage
   jbuilder (~> 2.7)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)

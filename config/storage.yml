@@ -9,7 +9,7 @@ local:
 google:
   service: GCS
   project: fourr
-  credentials: <%= Rails.application.credentials.gcs.to_json %>
+  credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
   bucket: fourr-bucket
 
 google_dev:
