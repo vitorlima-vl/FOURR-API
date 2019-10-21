@@ -10,9 +10,9 @@ google:
   service: GCS
   project: fourr
   credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
-  bucket: fourr-bucket
+  bucket: fourr-bucket2
 google_dev:
   service: GCS
   project: fourr
   credentials: <%= Rails.root.join("config/gcs.json") %>
-  bucket: fourr-bucket
+  bucket: fourr-bucket2
