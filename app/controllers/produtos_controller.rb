@@ -26,7 +26,7 @@ class ProdutosController < ApplicationController
     print(params['imagem'])
     print(params[fd])
     print(params.fd)
-    produto.image.attatch(params.fd)
+    produto.image.attatch(params[:imagem])
     render json: {status: true, produto: produto}
   end
 end
