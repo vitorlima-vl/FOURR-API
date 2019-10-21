@@ -21,7 +21,12 @@ class ProdutosController < ApplicationController
 
   def nova_img
     produto = Produto.find(Produto.maximum[:id])
-    produto.image.attatch(params.imagem)
+    print(params)
+    print(params.imagem)
+    print(params['imagem'])
+    print(params[fd])
+    print(params.fd)
+    produto.image.attatch(params.fd)
     render json: {status: true, produto: produto}
   end
 end
