@@ -21,8 +21,7 @@ class ProdutosController < ApplicationController
 
   def nova_img
     produto = Produto.last
-    print('TEMPFILE ',params['imagem']['tempfile'],'CONTENT TYPE ',params['imagem']['content_type'])
-    produto.image.attatch(params['imagem']['tempfile'],params['imagem']['content_type'])
+    produto.image.attatch(params)
     render json: {status: true, produto: produto}
   end
 #['imagem']
