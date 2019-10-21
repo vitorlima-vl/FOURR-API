@@ -21,12 +21,13 @@ class ProdutosController < ApplicationController
 
   def nova_img
     produto = Produto.last
-    print(params)
-    print(params.imagem)
-    print(params['imagem'])
-    print(params[fd])
-    print(params.fd)
     produto.image.attatch(params[:imagem])
     render json: {status: true, produto: produto}
   end
+
+  private
+    def produto_params
+      params.require(:produto).permit(:descricao, :nome_prod, :imagem, :categoria, :dono_prod)
+    end
+
 end
