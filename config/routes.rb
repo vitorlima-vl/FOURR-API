@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   delete :logout, to: "sessions#logout"
 
   get :logged_in, to: "sessions#logged_in"
-  get :search, to: "produtos#buscar"
+  post :search, to: "produtos#buscar"
 
   post :forgot, to: "senhas#forgot"
   post :reset, to: "senhas#reset"
