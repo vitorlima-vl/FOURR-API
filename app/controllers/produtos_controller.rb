@@ -26,7 +26,8 @@ class ProdutosController < ApplicationController
   end
 
   def buscar
-    print(params)
+    print(params['produto'])
+    print(params['produto']['nome'])
     produtos = Produto.buscar_prod(params['produto']['nome']) 
     render json: {status: true, produtos: produtos}
   end
