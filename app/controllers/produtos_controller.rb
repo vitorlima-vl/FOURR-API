@@ -26,6 +26,7 @@ class ProdutosController < ApplicationController
   end
 
   def buscar
+    return params
     produtos = Produto.buscar_prod(params['produto']['nome']) 
     render json: {status: true, produtos: produtos}
   end
@@ -35,3 +36,5 @@ class ProdutosController < ApplicationController
       params.require(:produto).permit(:descricao, :nome_prod, :imagem, :categoria, :dono_prod)
     end
 end
+
+#curl --header "Content-Type: application/json" --request GET --data '{"produto": {"nome": "MAc"}}' http://localhost:3000/search
