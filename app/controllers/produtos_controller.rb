@@ -25,9 +25,13 @@ class ProdutosController < ApplicationController
     render json: {status: true, produto: produto}
   end
 
+  def buscar
+    produtos = Produto.buscar_prod(params['produto']['nome']) 
+    render json: {status: true, produtos: produtos}
+  end
+
   private
     def produto_params
       params.require(:produto).permit(:descricao, :nome_prod, :imagem, :categoria, :dono_prod)
     end
-
 end
