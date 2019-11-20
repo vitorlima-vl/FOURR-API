@@ -39,7 +39,8 @@ class ProdutosController < ApplicationController
     Produto.find(params['produto']['id']).delete
     produtos= Produto.buscar_prod_dono(params['produto']['dono'])
     render json: {status: true, produtos: produtos}
-
+  end
+  
   private
     def produto_params
       params.require(:produto).permit(:descricao, :nome_prod, :imagem, :categoria, :dono_prod)
