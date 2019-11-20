@@ -18,7 +18,7 @@ class ProdutosController < ApplicationController
       render json: {error: ["Dono não encontrado. Tente novamente"]}
     end
   end
-
+### curl --header "Content-Type: application/json" --request GET --data '{"produto": {"nome": "MAc"}}' http://localhost:3000/search
   def nova_img
     produto = Produto.last
     produto.image.attach(params[:image])
@@ -45,6 +45,3 @@ class ProdutosController < ApplicationController
       params.require(:produto).permit(:descricao, :nome_prod, :imagem, :categoria, :dono_prod)
     end
 end
-
-
-#curl --header "Content-Type: application/json" --request GET --data '{"produto": {"nome": "MAc"}}' http://localhost:3000/search
