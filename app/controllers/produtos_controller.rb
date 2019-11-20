@@ -47,7 +47,4 @@ class ProdutosController < ApplicationController
 end
 
 
-produtos#buscardono"
-  post :deleteitem, to: "produtos#deleteitem"
-
 #curl --header "Content-Type: application/json" --request GET --data '{"produto": {"nome": "MAc"}}' http://localhost:3000/search
