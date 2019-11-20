@@ -31,7 +31,7 @@ class ProdutosController < ApplicationController
   end
 
   def buscardono
-    produtos= Produto.buscar_prod_dono(params['produto']['dono'])
+    produtos= Produto.buscar_prod_dono(params['dono']['dono'])
     render json: {status: true, produtos: produtos}
   end
 
@@ -40,7 +40,7 @@ class ProdutosController < ApplicationController
     produtos= Produto.buscar_prod_dono(params['produto']['dono'])
     render json: {status: true, produtos: produtos}
   end
-  
+
   private
     def produto_params
       params.require(:produto).permit(:descricao, :nome_prod, :imagem, :categoria, :dono_prod)
