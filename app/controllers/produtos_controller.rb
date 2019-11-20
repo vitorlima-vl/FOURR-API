@@ -30,10 +30,24 @@ class ProdutosController < ApplicationController
     render json: {status: true, produtos: produtos}
   end
 
+  def buscardono
+    produtos= Produto.buscar_prod_dono(params['produto']['dono'])
+    render json: {status: true, produtos: produtos}
+  end
+
+  def deleteitem
+    Produto.find(params['produto']['id']).delete
+    produtos= Produto.buscar_prod_dono(params['produto']['dono'])
+    render json: {status: true, produtos: produtos}
+
   private
     def produto_params
       params.require(:produto).permit(:descricao, :nome_prod, :imagem, :categoria, :dono_prod)
     end
 end
+
+
+produtos#buscardono"
+  post :deleteitem, to: "produtos#deleteitem"
 
 #curl --header "Content-Type: application/json" --request GET --data '{"produto": {"nome": "MAc"}}' http://localhost:3000/search
