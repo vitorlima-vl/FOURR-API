@@ -10,9 +10,11 @@ class RegistrationsController < ApplicationController
 			session[:user_id] = departamento.id
 			UserMailer.bemvindo_email(departamento).deliver_now
 			render json: {
-				status: :created,
+				status: true,
 				user: departamento
 			}
+		else
+			render json: { status: 500 }
 		end
 	end
 end
