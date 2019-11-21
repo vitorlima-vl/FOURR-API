@@ -13,8 +13,6 @@ class RegistrationsController < ApplicationController
 				status: :created,
 				user: departamento
 			}
-		else
-			render json: { status: 500 }
 		end
 	end
 end
