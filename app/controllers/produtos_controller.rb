@@ -22,6 +22,7 @@ class ProdutosController < ApplicationController
   def nova_img
     produto = Produto.last
     produto.image.attach(params[:image])
+    produto.update('imagem' => produto.logo_url)
     render json: {status: true, produto: produto}
   end
 
@@ -41,6 +42,10 @@ class ProdutosController < ApplicationController
     render json: {status: true, produtos: produtos}
   end
 
+  def getimagem
+    imagemurl = Produto.getimageurl(Produto.last)
+    render json: {status: true, methods: :logo_url}      
+  end
   private
     def produto_params
       params.require(:produto).permit(:descricao, :nome_prod, :imagem, :categoria, :dono_prod)
