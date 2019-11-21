@@ -10,6 +10,6 @@ class Produto < ApplicationRecord
 	end
 
 	def logo_url
-	    Rails.application.routes.url_helpers.rails_blob_path(self.image, only_path: true)
+	    Rails.application.routes.url_helpers.url_for(self.image)
 	end
 end
